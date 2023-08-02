@@ -1,0 +1,136 @@
+:root {
+   --light-cyan: hsl(193, 38%, 86%);
+   --neon-green: hsl(150, 100%, 66%);
+   --grayish-blue: hsl(217, 19%, 38%);
+   --dark-grayish-blue: hsl(217, 19%, 24%);
+   --dark-blue: hsl(218, 23%, 16%);
+   --font-size: 28px;
+}
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   position: relative;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: "Manrope", sans-serif;
+   background-color: var(--dark-blue);
+}
+
+/* Main */
+main {
+   position: relative;
+   width: 95%;
+   max-width: 33.75rem;
+   background-color: var(--dark-grayish-blue);
+   padding: 3.25rem 3rem;
+   border-radius: 1rem;
+   text-align: center;
+   font-size: 0.4rem;
+}
+
+.title {
+   text-transform: uppercase;
+   color: var(--neon-green);
+   letter-spacing: 0.2rem;
+}
+
+.cta {
+   width: 4rem;
+   height: 4rem;
+   border-radius: 50%;
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: var(--neon-green);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.cta.disabled {
+   cursor: not-allowed;
+}
+
+.cta:hover {
+   box-shadow: 0 0 2.5rem var(--neon-green);
+   cursor: pointer;
+}
+
+.quote {
+   color: var(--light-cyan);
+   font-size: var(--font-size);
+   margin-top: 2rem;
+   margin-bottom: 2.5rem;
+}
+
+.lds-dual-ring {
+   display: inline-block;
+   width: 80px;
+   height: 80px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -70%);
+}
+
+.lds-dual-ring.disabled {
+   display: none;
+}
+
+.lds-dual-ring:after {
+   content: " ";
+   display: block;
+   width: 64px;
+   height: 64px;
+   margin: 8px;
+   border-radius: 50%;
+   border: 6px solid #fff;
+   border-color: #fff transparent #fff transparent;
+   animation: lds-dual-ring 1.2s linear infinite;
+}
+
+/* Dividers */
+.divider-desktop {
+   display: block;
+   margin-bottom: 1.2rem;
+}
+
+.divider-mobile {
+   display: none;
+}
+
+/* Animation */
+@keyframes lds-dual-ring {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+   main {
+      padding: 2.6rem 1.5rem;
+   }
+
+   .divider-mobile {
+      display: block;
+      margin-bottom: 0.9rem;
+   }
+
+   .divider-desktop {
+      display: none;
+   }
+}
